@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {login} from './../../actions/auth';
+import {login} from '../actions/auth';
 
 
 const Login = ({login, isAuthenticated}) => {
@@ -17,17 +17,13 @@ const Login = ({login, isAuthenticated}) => {
         login(email, password);
     }
     if(isAuthenticated) {
-        return <Redirect to='/dashboard'/>
+        return <Redirect to='/dashboard'/>;
     }
     return (
         <section className="container">
-            <div className="alert alert-danger">
-                Invalid credentials
-            </div>
-            <h1 className="large text-primary">Sign In</h1>
-            <p className="lead"><i className="fas fa-user"></i> Sign into Your Account</p>
+            <h3 className="indigo-text accent-4 center">Sign In</h3>
             <form className="form" onSubmit={e => onSubmit(e)}>
-                <div className="form-group">
+                <div className="input-field">
                     <input
                         type="email"
                         placeholder="Email Address"
@@ -37,7 +33,7 @@ const Login = ({login, isAuthenticated}) => {
                         onChange={e => onChange(e)}
                     />
                 </div>
-                <div className="form-group">
+                <div className="input-field">
                     <input
                         type="password"
                         placeholder="Password"
@@ -46,10 +42,10 @@ const Login = ({login, isAuthenticated}) => {
                         onChange={e => onChange(e)}
                     />
                 </div>
-                <input type="submit" className="btn btn-primary" value="Login" />
+                <input type="submit" className="btn indigo accent-4 waves-effect waves-light white-text" value="Login" />
             </form>
             <p className="my-1">
-                Don't have an account? <Link to="/register">Sign Up</Link>
+                Don't have an account? <Link to="/register" className="btn waves-effect waves-light deep-orange accent-3">Sign Up</Link>
             </p>
         </section>
     )
