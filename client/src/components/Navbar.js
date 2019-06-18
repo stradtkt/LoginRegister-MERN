@@ -7,23 +7,23 @@ import {connect} from 'react-redux';
 const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
     const authLinks = (
         <ul className="right">
-            <li><Link to="/" className="white-text">Home</Link></li>
-            <li><Link to="/dashboard" className="white-text">Dashboard</Link></li>
+            <li><Link to="/" className="btn indigo lighten-2 waves-effect waves-light white-text">Home</Link></li>
+            <li><Link to="/dashboard" className="btn indigo lighten-2 waves-effect waves-light white-text">Dashboard</Link></li>
             <li><button onClick={logout} className="btn deep-orange accent-3 waves-effect waves-light">Logout</button></li>
         </ul>
     );
     const guestLinks = (
         <ul className="right">
-            <li><Link to="/" className="white-text">Home</Link></li>
-            <li><Link to="/login" className="white-text">Login</Link></li>
-            <li><Link to="/register" className="white-text">Register</Link></li>
+            <li><Link to="/" className="btn indigo lighten-2 waves-effect waves-light white-text">Home</Link></li>
+            <li><Link to="/login" className="btn indigo lighten-2 waves-effect waves-light white-text">Login</Link></li>
+            <li><Link to="/register" className="btn indigo lighten-2 waves-effect waves-light white-text">Register</Link></li>
         </ul>
     );
     return (
         <nav>
             <div className="nav-wrapper indigo accent-4">
                 <div className="container">
-                    <a href="#!" className="brand-logo center">Login Register</a>
+                    <a href="#!" className="brand-logo left">Social</a>
                     {!loading && (<Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>)}
                 </div>
             </div>
