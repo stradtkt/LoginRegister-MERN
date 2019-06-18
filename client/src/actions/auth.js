@@ -12,7 +12,6 @@ import {
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
-// Load User
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -32,7 +31,6 @@ export const loadUser = () => async dispatch => {
   }
 };
 
-// Register User
 export const register = ({ name, email, password }) => async dispatch => {
   const config = {
     headers: {
@@ -64,7 +62,6 @@ export const register = ({ name, email, password }) => async dispatch => {
   }
 };
 
-// Login User
 export const login = (email, password) => async dispatch => {
   const config = {
     headers: {
