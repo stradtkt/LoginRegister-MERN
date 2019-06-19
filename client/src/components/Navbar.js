@@ -9,6 +9,7 @@ const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
         <ul className="right">
             <li><Link to="/" className="btn indigo lighten-2 waves-effect waves-light white-text">Home</Link></li>
             <li><Link to="/dashboard" className="btn indigo lighten-2 waves-effect waves-light white-text">Dashboard</Link></li>
+            <li><Link to="/feed" className="btn indigo lighten-2 waves-effect waves-light white-text">Feed</Link></li>
             <li><button onClick={logout} className="btn deep-orange accent-3 waves-effect waves-light">Logout</button></li>
         </ul>
     );
